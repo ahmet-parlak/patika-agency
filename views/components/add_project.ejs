@@ -1,0 +1,57 @@
+<!-- Add Button -->
+<div class="d-flex justify-content-center">
+  <button class="d-flex align-items-center btn btn-success" data-bs-toggle="modal" href="#addModal">
+    <i class="fas fa-plus fa-3x"></i>
+    <span class="ms-2 fw-bolder">Add Project</span>
+  </button>
+</div>
+
+<!-- Add Modal-->
+<div class="portfolio-modal modal fade" id="addModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-bs-dismiss="modal"><img src="/assets/img/close-icon.svg" alt="Close modal" /></div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="modal-body">
+              <h2 class="text-uppercase">Add New Project</h2>
+              <p class="item-intro text-muted">Please enter project details</p>
+              <!-- Project details-->
+              <form method="POST" action="/project">
+                <!-- Title-->
+                <div class="form-group mb-4">
+                  <input class="form-control py-2" name="title" type="text" placeholder="Project Title *" required />
+                </div>
+                <!-- Brief-->
+                <div class="form-group mb-4">
+                  <input class="form-control py-2" name="brief" type="text" placeholder="Project Brief" />
+                </div>
+                <!-- Description -->
+                <div class="form-group mb-4">
+                  <textarea class="form-control" name="description" rows="4" placeholder="Project Description" data-sb-validations="required" style="resize: none;"></textarea>
+                </div>
+                <!-- Client -->
+                <div class="form-group mb-4">
+                  <input class="form-control py-2" name="client" type="text" placeholder="Project Client" />
+                </div>
+                <!-- Category -->
+                <div class="form-group mb-4">
+                  <input class="form-control py-2" name="category" type="text" placeholder="Projcet Category" />
+                </div>
+                <!-- Photo -->
+                <div class="form-group mb-4 d-flex align-items-center">
+                  <label class="me-2 text-secondary" for="photo" style="width: 150px;">Project Photo</label>
+                  <input class="form-control" id="photo" name="photo" type="file" placeholder="Photo" />
+                </div>
+                <button class="btn btn-lg btn-success text-uppercase" type="submit">
+                  Add Project
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

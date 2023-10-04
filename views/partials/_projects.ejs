@@ -3,16 +3,17 @@
     <div class="text-center">
       <h2 class="section-heading text-uppercase">Portfolio</h2>
       <% 
-      let subheadingText = "Our projects will be added to this area very soon..";
+      let subheadingText = "Your projects will be listed in this section..";
       if (projects.length > 0) {
-        subheadingText = "Our Projects";
+        subheadingText = "Your Projects";
       } 
       %>
       <h3 class="section-subheading text-muted"><%= subheadingText %></h3>
     </div>
+    <%- include('../components/add_project') %>
     <div class="row">
       <% projects.forEach(project => {%>
-      <%- include('../components/project',project) %>
+      <%- include('../components/edit_project', project) %>
       <%}); %>
     </div>
   </div>

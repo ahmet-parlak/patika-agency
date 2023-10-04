@@ -1,0 +1,71 @@
+<div class="col-lg-4 col-sm-6 mb-4">
+  <!-- Portfolio Item-->
+  <div class="portfolio-item">
+    <a class="portfolio-link" data-bs-toggle="modal" href="#<%= project.id %>">
+      <div class="portfolio-hover">
+        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+      </div>
+      <img class="img-fluid" src="<%= project.photo %>" alt="..." />
+    </a>
+    <div class="portfolio-caption">
+      <!-- Project Title -->
+      <div class="portfolio-caption-heading"><%= project.title %></div>
+      <!-- Project Category -->
+      <div class="portfolio-caption-subheading text-muted"><%= project.category %></div>
+    </div>
+  </div>
+</div>
+
+<!-- Portfolio Modal-->
+<div class="portfolio-modal modal fade" id="<%= project.id %>" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-bs-dismiss="modal"><img src="/assets/img/close-icon.svg" alt="Close modal" /></div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="modal-body">
+              <!-- Project details-->
+              <form method="POST" action="/project/<%= project.id %>?_method=UPDATE">
+                <!-- Title-->
+                <div class="form-group mb-4">
+                  <input class="form-control" name="title" type="text" placeholder="Project Title *" value="<%= project.title %>" required />
+                </div>
+                <!-- Brief-->
+                <div class="form-group mb-4">
+                  <input class="form-control" name="brief" type="text" placeholder="Project Brief" value="<%= project.brief %>" />
+                </div>
+                <!-- Description -->
+                <div class="form-group mb-4">
+                  <textarea name="description" placeholder="Project description" cols="30" rows="10"><%= project.description %></textarea>
+                </div>
+                <!-- Client -->
+                <div class="form-group mb-4">
+                  <input class="form-control" name="client" type="text" placeholder="Client" value="<%= project.client %>" />
+
+                </div>
+                <!-- Category -->
+                <div class="form-group mb-4">
+                  <input class="form-control" name="category" type="text" placeholder="Category" value="<%= project.category %>" />
+                </div>
+                <!-- Photo -->
+                <div class="form-group mb-4 d-flex align-items-center">
+                  <label class="me-2 text-secondary" for="photo" style="width: 150px;">Project Photo</label>
+                  <input class="form-control" name="photo" type="file" placeholder="Photo" />
+                </div>
+                <button class="btn btn-primary text-uppercase" type="submit">
+                  Update Project
+                </button>
+              </form>
+              <form method="POST" action="/project/<%= project.id %>?_method=DELETE">
+                <button class="btn btn-danger text-uppercase" onclick="return confirm('The project will be permanently removed from your portfolio, are you sure?')" type="submit">
+                  Delete Project
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

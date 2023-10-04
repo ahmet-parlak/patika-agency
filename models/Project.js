@@ -9,6 +9,7 @@ const ProjectSchema = new Schema({
   client: { type: String, trim: true },
   category: { type: String, trim: true },
   photo: { type: String, trim: true },
+  created_at: { type: Date, default: Date.now },
 });
 
 const Project = mongoose.model('Project', ProjectSchema);

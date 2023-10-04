@@ -1,29 +1,32 @@
 <!-- Header -->
 <%- include('partials/_header') %>
 
-<!-- Navigation-->
+<!-- Navigation -->
 <%- include('partials/_navigation') %>
 
-<!-- Masthead-->
+<!-- Masthead -->
 <%- include('partials/_masthead') %>
 
-<!-- Services-->
+<!-- Services -->
 <%- include('partials/_services') %>
 
-<!-- Portfolio Grid-->
-<%- include('partials/_portfolio') %>
+<!-- Portfolio Grid -->
+<% 
+const portfolioPath = userIN ? 'partials/_projects' : 'partials/_portfolio';
+%>
+<%- include(portfolioPath) %>
 
-<!-- About-->
+<!-- About -->
 <%- include('partials/_about') %>
 
-<!-- Team-->
+<!-- Team -->
 <%- include('partials/_team') %>
 
-<!-- Clients-->
+<!-- Clients -->
 <%- include('partials/_clients') %>
 
-<!-- Contact-->
+<!-- Contact -->
 <%- include('partials/_contact') %>
 
-<!-- Footer-->
+<!-- Footer -->
 <%- include('partials/_footer') %>
