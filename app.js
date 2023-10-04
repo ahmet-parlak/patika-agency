@@ -1,9 +1,12 @@
 const express = require('express');
+const session = require('express-session');
 const mongoose = require('mongoose');
-
-require('dotenv').config();
+const flash = require('connect-flash');
 
 const pageRoute = require('./routes/pageRoute');
+const authRoute = require('./routes/authRoute');
+
+require('dotenv').config();
 
 //App
 const app = express();
@@ -18,16 +21,37 @@ mongoose
     console.log(`MongoDB connection is failed: ${err}`);
   });
 
-//Template Engine
+//CONFIGRATION
 app.set('view engine', 'ejs');
+app.set('trust proxy', 1); // trust first proxy ~ came with express-session
+
+//GLOBAL VARIABLES
+global.userIN = null;
 
 //Middlewares
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(
+  session({
+    secret: 'my_keyboard_cat',
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+app.use(flash());
+app.use((req, res, next) => {
+  res.locals.flashMessages = req.flash();
+  next();
+});
 
 //Routes
+app.use('*', (req, res, next) => {
+  userIN = req.session.userID;
+  next();
+});
 app.use('/', pageRoute);
+app.use('/auth', authRoute);
 
 //Listening
 const port = process.env.PORT ?? 5000;

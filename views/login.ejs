@@ -1,0 +1,66 @@
+<!-- Header -->
+<%- include('partials/_header') %>
+
+<!-- Navigation -->
+<%- include('partials/_navigation') %>
+
+<section class="page-section min-vh-100 d-flex align-items-center" id="login">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-heading text-uppercase">Login</h2>
+    </div>
+    <!-- Login Form -->
+    <form class="mt-5" id="loginForm" method="POST" action="/auth/login" data-sb-form-api-token="API_TOKEN">
+      <div class="row align-items-stretch mb-5">
+        <div class="col-md-6 offset-md-3">
+          <div class="form-group mb-4">
+            <!-- Username input-->
+            <input class="form-control" id="username" name="username" type="text" placeholder="Username *" data-sb-validations="required" required />
+            <div class="invalid-feedback" data-sb-feedback="username:required">Enter your username</div>
+          </div>
+          <div class="form-group mb-4">
+            <!-- Password input-->
+            <input class="form-control" id="password" type="password" name="password" placeholder="Password *" data-sb-validations="required" required />
+            <div class="invalid-feedback" data-sb-feedback="password:required">Enter your password</div>
+          </div>
+        </div>
+      </div>
+      <!-- Submit success message-->
+      <!---->
+      <!-- This is what your users will see when the form-->
+      <!-- has successfully submitted-->
+      <div class="" id="submitSuccessMessage">
+        <div class="text-center text-white mb-3">
+          <div class="text-center text-success mb-3"><%= flashMessages.success %></div>
+        </div>
+      </div>
+      <!-- Submit error message-->
+      <!---->
+      <!-- This is what your users will see when there is-->
+      <!-- an error submitting the form-->
+      <div class="" id="submitErrorMessage">
+        <div class="text-center text-danger mb-3"><%= flashMessages.error %></div>
+
+        <% if(flashMessages?.errors){%>
+          <% flashMessages.errors.forEach(error => {%>
+          <div class="text-center text-danger mb-3"><%= error %></div>
+          <% }); %>
+  
+          <%}%>
+      </div>
+      <!-- Submit Button-->
+      <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">Submit</button></div>
+    </form>
+
+  </div>
+</section>
+
+
+
+<!-- Footer -->
+<%- include('partials/_footer') %>
+<script>
+  document.querySelector("html").style.minHeight = "100vh";
+  document.getElementById("mainNav").style.backgroundColor = "#212529";
+  document.querySelector("footer").classList.add("fixed-bottom");
+</script>
