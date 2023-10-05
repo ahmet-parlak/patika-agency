@@ -12,7 +12,7 @@
     </div>
     <div class="row">
       <% projects.forEach(project => {%>
-      <%- include('../components/project',project) %>
+      <%- include('../components/project',{project}) %>
       <%}); %>
     </div>
   </div>

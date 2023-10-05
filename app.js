@@ -2,9 +2,11 @@ const express = require('express');
 const session = require('express-session');
 const mongoose = require('mongoose');
 const flash = require('connect-flash');
+const fileUpload = require('express-fileupload');
 
 const pageRoute = require('./routes/pageRoute');
 const authRoute = require('./routes/authRoute');
+const projectRoute = require('./routes/projectRoute');
 
 require('dotenv').config();
 
@@ -44,6 +46,7 @@ app.use((req, res, next) => {
   res.locals.flashMessages = req.flash();
   next();
 });
+app.use(fileUpload());
 
 //Routes
 app.use('*', (req, res, next) => {
@@ -52,6 +55,7 @@ app.use('*', (req, res, next) => {
 });
 app.use('/', pageRoute);
 app.use('/auth', authRoute);
+app.use('/project', projectRoute);
 
 //Listening
 const port = process.env.PORT ?? 5000;

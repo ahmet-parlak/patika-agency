@@ -1,8 +1,8 @@
 <!-- Add Button -->
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center mb-4">
   <button class="d-flex align-items-center btn btn-success" data-bs-toggle="modal" href="#addModal">
     <i class="fas fa-plus fa-3x"></i>
-    <span class="ms-2 fw-bolder">Add Project</span>
+    <span class="ms-2 fs-4">Add Project</span>
   </button>
 </div>
 
@@ -18,7 +18,7 @@
               <h2 class="text-uppercase">Add New Project</h2>
               <p class="item-intro text-muted">Please enter project details</p>
               <!-- Project details-->
-              <form method="POST" action="/project">
+              <form method="POST" action="/project" enctype="multipart/form-data">
                 <!-- Title-->
                 <div class="form-group mb-4">
                   <input class="form-control py-2" name="title" type="text" placeholder="Project Title *" required />
@@ -41,8 +41,8 @@
                 </div>
                 <!-- Photo -->
                 <div class="form-group mb-4 d-flex align-items-center">
-                  <label class="me-2 text-secondary" for="photo" style="width: 150px;">Project Photo</label>
-                  <input class="form-control" id="photo" name="photo" type="file" placeholder="Photo" />
+                  <label class="me-2 text-secondary" for="image" style="width: 150px;">Project Photo</label>
+                  <input class="form-control" id="image" name="image" type="file" placeholder="Photo" />
                 </div>
                 <button class="btn btn-lg btn-success text-uppercase" type="submit">
                   Add Project
