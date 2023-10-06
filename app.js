@@ -59,6 +59,10 @@ app.use('/', pageRoute);
 app.use('/auth', authRoute);
 app.use('/project', projectRoute);
 
+app.use((req, res, next) => {
+  res.status(404).render('404');
+});
+
 //Listening
 const port = process.env.PORT ?? 5000;
 app.listen(port, () => {
