@@ -1,7 +1,7 @@
 <% if (flashMessages.successToast) {%>
 <div class="toast fixed-top mx-auto mt-5 align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
   <div class="d-flex">
-    <div class="toast-body">
+    <div class="toast-body text-center ps-3">
       <%= flashMessages.successToast %>
     </div>
     <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -10,9 +10,9 @@
 <%} %>
 
 <% if (flashMessages.errorToast) {%>
-<div class="toast fixed-top mx-auto mt-5 align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+<div class="toast fixed-top mx-auto mt-5 align-items-center text-white bg-danger border-0 " role="alert" aria-live="assertive" aria-atomic="true">
   <div class="d-flex">
-    <div class="toast-body">
+    <div class="toast-body text-center ps-3">
       <%= flashMessages.errorToast %>
     </div>
     <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>

@@ -23,10 +23,13 @@
  <script>
    var toastElList = [].slice.call(document.querySelectorAll('.toast'))
    var toastList = toastElList.map(function(toastEl) {
-     return new bootstrap.Toast(toastEl)
+     return new bootstrap.Toast(toastEl, {
+       animation: true,
+       autohide: true,
+       delay: 1750
+     })
    })
    toastList.forEach(toast => toast.show()); // This show them
-  
  </script>
  </body>
 

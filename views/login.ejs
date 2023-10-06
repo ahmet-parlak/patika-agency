@@ -4,6 +4,9 @@
 <!-- Navigation -->
 <%- include('partials/_navigation') %>
 
+<!-- Toasts -->
+<%- include('components/toast_message') %>
+
 <section class="page-section min-vh-100 d-flex align-items-center" id="login">
   <div class="container">
     <div class="text-center">
@@ -11,16 +14,16 @@
     </div>
     <!-- Login Form -->
     <form class="mt-5" id="loginForm" method="POST" action="/auth/login" data-sb-form-api-token="API_TOKEN">
-      <div class="row align-items-stretch mb-5">
-        <div class="col-md-6 offset-md-3">
+      <div class="row align-items-stretch mb-3">
+        <div class="col-md-4 offset-md-4">
           <div class="form-group mb-4">
             <!-- Username input-->
-            <input class="form-control" id="username" name="username" type="text" placeholder="Username *" data-sb-validations="required" required />
+            <input class="form-control py-2" id="username" name="username" type="text" placeholder="Username" data-sb-validations="required" required />
             <div class="invalid-feedback" data-sb-feedback="username:required">Enter your username</div>
           </div>
           <div class="form-group mb-4">
             <!-- Password input-->
-            <input class="form-control" id="password" type="password" name="password" placeholder="Password *" data-sb-validations="required" required />
+            <input class="form-control py-2" id="password" type="password" name="password" placeholder="Password" data-sb-validations="required" required />
             <div class="invalid-feedback" data-sb-feedback="password:required">Enter your password</div>
           </div>
         </div>

@@ -4,6 +4,9 @@
 <!-- Navigation -->
 <%- include('partials/_navigation') %>
 
+<!-- Toasts -->
+<%- include('components/toast_message') %>
+
 <section class="page-section min-vh-100 d-flex align-items-center" id="register">
   <div class="container">
     <div class="text-center">
@@ -12,21 +15,21 @@
     </div>
     <!-- Register Form -->
     <form class="mt-5" id="registerForm" method="POST" action="/auth/register">
-      <div class="row align-items-stretch mb-5">
-        <div class="col-md-6 offset-md-3">
+      <div class="row align-items-stretch mb-3">
+        <div class="col-md-4 offset-md-4">
           <div class="form-group mb-4">
             <!-- Username input-->
-            <input class="form-control" name="username" type="text" placeholder="Username *" data-sb-validations="required"  />
+            <input class="form-control py-2" name="username" type="text" placeholder="Username *" data-sb-validations="required" />
             <div class="invalid-feedback" data-sb-feedback="username:required">Enter a username</div>
           </div>
           <div class="form-group mb-4">
             <!-- Password input-->
-            <input class="form-control" name="password" type="password" placeholder="Password *" data-sb-validations="required"  />
+            <input class="form-control  py-2" name="password" type="password" placeholder="Password *" data-sb-validations="required" />
             <div class="invalid-feedback" data-sb-feedback="password:required">Enter a strong password</div>
           </div>
           <div class="form-group mb-4">
             <!-- Password confirmation input-->
-            <input class="form-control" name="password_confirm" type="password" placeholder="Confirm Password *" data-sb-validations="required"  />
+            <input class="form-control  py-2" name="password_confirm" type="password" placeholder="Confirm Password *" data-sb-validations="required" />
             <div class="invalid-feedback" data-sb-feedback="password:required">Confirm password</div>
           </div>
         </div>
