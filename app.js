@@ -3,6 +3,7 @@ const session = require('express-session');
 const mongoose = require('mongoose');
 const flash = require('connect-flash');
 const fileUpload = require('express-fileupload');
+const methodOverride = require('method-override');
 
 const pageRoute = require('./routes/pageRoute');
 const authRoute = require('./routes/authRoute');
@@ -47,6 +48,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use(fileUpload());
+app.use(methodOverride('_method', { methods: ['GET', 'POST'] }));
 
 //Routes
 app.use('*', (req, res, next) => {

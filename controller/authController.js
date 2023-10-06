@@ -23,7 +23,7 @@ exports.register = async (req, res) => {
   User.create(req.body)
     .then(() => {
       req.flash(
-        'success',
+        'successToast',
         'You have successfully registered! You can log in with your username and password.'
       );
       res.redirect('/login');
@@ -49,8 +49,8 @@ exports.login = async (req, res) => {
         if (isCorrect) {
           req.session.userID = user.id;
 
-          req.flash('success', 'Login successful!');
-          return res.redirect('/');
+          req.flash('successToast', 'Login successful!');
+          return res.redirect('/#portfolio');
         } else {
           req.flash('error', 'Username or password incorrect!');
           return res.redirect('/login');

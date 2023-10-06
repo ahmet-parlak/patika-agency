@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ProjectSchema = new Schema({
-  title: { type: String, required: true, trim: true },
+  title: { type: String, required: true, trim: true, min:1 },
   brief: { type: String, trim: true },
   description: { type: String, trim: true },
   client: { type: String, trim: true },
