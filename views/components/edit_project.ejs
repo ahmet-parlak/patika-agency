@@ -36,28 +36,28 @@
                 <!-- Title-->
                 <div class="form-group mb-4 text-start">
                   <label class="form-label ps-1 fw-bold fs-5 ps-1 fw-bold fs-5">Project Title</label>
-                  <input class="form-control" name="title" type="text" placeholder="Project Title *" value="<%= project.title %>" required />
+                  <input class="form-control" name="title" type="text" placeholder="Project Title *" autocomplete="off" value="<%= project.title %>" required />
                 </div>
                 <!-- Brief-->
                 <div class="form-group mb-4 text-start">
                   <label class="form-label ps-1 fw-bold fs-5">Project Brief</label>
-                  <input class="form-control" name="brief" type="text" placeholder="Project Brief" value="<%= project.brief %>" />
+                  <input class="form-control" name="brief" type="text" placeholder="Project Brief" autocomplete="off" value="<%= project.brief %>" />
                 </div>
                 <!-- Description -->
                 <div class="form-group mb-4 text-start">
                   <label class="form-label ps-1 fw-bold fs-5">Project Description</label>
-                  <textarea class="form-control" name="description" rows="4" placeholder="Project Description" data-sb-validations="required" style="resize: none;"><%= project.description %></textarea>
+                  <textarea class="form-control" name="description" rows="4" placeholder="Project Description" autocomplete="off" data-sb-validations="required" style="resize: none;"><%= project.description %></textarea>
                 </div>
                 <!-- Client -->
                 <div class="form-group mb-4 text-start">
                   <label class="form-label ps-1 fw-bold fs-5">Project Client</label>
-                  <input class="form-control" name="client" type="text" placeholder="Client" value="<%= project.client %>" />
+                  <input class="form-control" name="client" type="text" placeholder="Client" autocomplete="off" value="<%= project.client %>" />
 
                 </div>
                 <!-- Category -->
                 <div class="form-group mb-4 text-start">
                   <label class="form-label ps-1 fw-bold fs-5">Project Category</label>
-                  <input class="form-control" name="category" type="text" placeholder="Category" value="<%= project.category %>" />
+                  <input class="form-control" name="category" type="text" placeholder="Category" autocomplete="off" value="<%= project.category %>" />
                 </div>
                 <!-- Photo -->
                 <div class="form-group mb-4 text-start">
