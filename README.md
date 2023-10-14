@@ -1,5 +1,5 @@
 # Patika-Agency
-Agency is a portfolio site built with **Express** and **MongoDB** and [Agency theme](https://startbootstrap.com/theme/agency) for [this task](https://academy.patika.dev/tr/courses/nodejs-backend-patikasi-projeleri/Agency-Proje) in Patika.dev NodeJS course.
+Agency is a portfolio website built with **Express** and **MongoDB** and [Agency theme](https://startbootstrap.com/theme/agency) for [this task](https://academy.patika.dev/tr/courses/nodejs-backend-patikasi-projeleri/Agency-Proje) in Patika.dev NodeJS course.
 
 ## Getting Started
 - Clone this repo: ```git clone https://github.com/ahmet-parlak/patika-agency.git```
